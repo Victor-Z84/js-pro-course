@@ -2,57 +2,46 @@
 
 describe("Проверка решения квадратного уравнения", () => {
 
-    describe("Квадратное уравнение имеет 2 корня", () => {
+    describe("Квадратное уравнение принимает валидные коэффициенты", () => {
         const tests = [
-            ["Работает с коэффициентами: -1, -5, 14", -1, -5, 14, [-7, 2]],
-            ["Работает с коэффициентами: 1, -13, 36", 1, -13, 36, [9, 4]],
-            ["Работает с коэффициентами: 2, -1, -15", 2, -1, -15, [3, -2.5]],
-            ["Работает с коэффициентами: 5, -3, -2", 5, -3, -2, [1, -0.4]],
+            [-1, -5, 14, [-7, 2]],
+            [1, -13, 36, [9, 4]],
+            [2, -1, -15, [3, -2.5]],
+            [5, -3, -2, [1, -0.4]],
+            [1, -6, 9, [3, 3]],
+            [3, -18, 27, [3, 3]],
         ];
 
-        tests.forEach(tests =>
-            it(tests[0], () => {
-                assert.deepEqual(quadratucEquation(tests[1], tests[2], tests[3]), tests[4]);    
-            })
-        );
-    });
-
-    describe("Квадратное уравнение имеет 1 корень", () => {
-        const tests = [
-            ["Работает с коэффициентами: 1, -6, 9", 1, -6, 9, [3, null]],
-            ["Работает с коэффициентами: 3, -18, 27", 3, -18, 27, [3, null]],
-        ];
-
-        tests.forEach(tests =>
-            it(tests[0], () => {
-                assert.deepEqual(quadratucEquation(tests[1], tests[2], tests[3]), tests[4]);    
+        tests.forEach(test =>
+            it(`Уравнение имеет корни с коэффициентами: ${test[0]}, ${test[1]}, ${test[2]}`, () => {
+                assert.deepEqual(quadratucEquation(test[0], test[1], test[2]), test[3]);    
             })
         );
     });
 
     describe("Квадратное уравнение не имеет корней", () => {
         const tests = [
-            ["Работает с коэффициентами: 1, -5, 9", 1, -5, 9, ['корней нет', null]],
-            ["Работает с коэффициентами: 4, 0, 8", 4, 0, 8, ['корней нет', null]],
+            [1, -5, 9, [NaN, NaN]],
+            [4, 0, 8, [NaN, NaN]],
         ];
 
-        tests.forEach(tests =>
-            it(tests[0], () => {
-                assert.deepEqual(quadratucEquation(tests[1], tests[2], tests[3]), tests[4]);    
+        tests.forEach(test =>
+            it(`Не имеет корней с коэффициентами: ${test[0]}, ${test[1]}, ${test[2]}`, () => {
+                assert.deepEqual(quadratucEquation(test[0], test[1], test[2]), test[3]);    
             })
         );
     });
 
-    describe("Введены некорректные коэффициенты", () => {
+    describe("Квадратное уравнение с невалидными коэффициентами", () => {
         const tests = [
-            ["Не работает с коэффициентами: 'sds', 8, 5", 'sds', 8, 5, [NaN, NaN]],
-            ["Не работает с коэффициентами: 9, [], 45", 9, [], 45, [NaN, NaN]],
-            ["Не работает с коэффициентами: 5, -13, true", 5, -13, true, [NaN, NaN]],
+            ['sds', 8, 5, [NaN, NaN]],
+            [9, [], 45, [NaN, NaN]],
+            [5, -13, true, [NaN, NaN]],
         ];
 
-        tests.forEach(tests =>
-            it(tests[0], () => {
-                assert.deepEqual(quadratucEquation(tests[1], tests[2], tests[3]), tests[4]);    
+        tests.forEach(test => 
+            it(`Не работает с коэффициентами: ${test[0]}, ${test[1]}, ${test[2]}`, () => {
+                assert.deepEqual(quadratucEquation(test[0], test[1], test[2]), test[3]);    
             })
         );
     });
