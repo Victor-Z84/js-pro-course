@@ -1,0 +1,65 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.5rem;
+    color: #517664;
+    height: 100vh;
+    background-color: #FAFAFA;
+}
+
+.app {
+    max-width: 800px;
+    padding: 2rem;
+    margin: 0 auto;
+}
+
+.title {
+    text-align: center;
+    padding: 3rem;
+}
+
+.input-t {
+    width: 85%;
+    height: 5rem;
+    font-size: 2rem;
+    border: none;
+    padding: 2rem;
+    box-shadow: 0.2rem 0.2rem 0.1rem #CACFD6, -0.2rem 0 1rem #CACFD6;
+    margin-bottom: 2rem;
+}
+
+.input-t::placeholder {
+    font-style: italic;
+}
+
+.button {
+    width: 10%;
+    margin-left: 1%;
+    cursor: pointer;
+    height: 5rem;
+    font-size: 2rem;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.list {
+    cursor: pointer;
+    padding-left: 3rem;
+}
+
+li {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
