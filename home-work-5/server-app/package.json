@@ -1,0 +1,22 @@
+{
+  "name": "npm-server-app",
+  "version": "1.0.0",
+  "description": "home-work-5__1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Victor-Z84/js-pro-course.git"
+  },
+  "author": "Victor Zdvizhkov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Victor-Z84/js-pro-course/issues"
+  },
+  "homepage": "https://github.com/Victor-Z84/js-pro-course#readme",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
