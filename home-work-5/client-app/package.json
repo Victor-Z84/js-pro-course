@@ -1,0 +1,27 @@
+{
+  "name": "npm-client-app",
+  "version": "1.0.0",
+  "description": "home-work-5__2",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Victor-Z84/js-pro-course.git"
+  },
+  "author": "Victor Zdvizhkov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Victor-Z84/js-pro-course/issues"
+  },
+  "homepage": "https://github.com/Victor-Z84/js-pro-course#readme",
+  "devDependencies": {
+    "eslint": "^8.4.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.5.1"
+  }
+}
