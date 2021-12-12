@@ -1,0 +1,17 @@
+@import "./colors.scss";
+
+
+
+body {
+    background-color: antiquewhite;
+}
+
+div {
+    background-color: brown;
+    padding: 20px;
+    
+
+    div {
+        background-color: cadetblue;
+    }
+}
