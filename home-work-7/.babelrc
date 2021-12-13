@@ -1,0 +1,8 @@
+// without options
+{
+    "plugins": [
+        "@babel/proposal-class-properties",
+        "@babel/plugin-transform-classes",
+        "@babel/plugin-transform-arrow-functions"
+    ]
+}
