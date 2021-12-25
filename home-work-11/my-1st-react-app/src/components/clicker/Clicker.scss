@@ -1,0 +1,48 @@
+.clicker {
+    width: 264px;
+    height: 264px;
+    background-color: #ffffff;
+    border: solid 1px rgb(182, 182, 182);
+    margin: 0px 40px 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    .clicker__label {
+        font-size: 112px;
+        color: rgb(126, 126, 126);
+    }
+
+    .clicker__btn {
+        height: 88px;
+        width: 88px;
+        border: none;
+        padding: 0px;
+        font-size: 32px;
+        color: whitesmoke;
+        font-weight: 900;
+    }
+
+    .clicker__btn_sub {
+        background-color: rgb(233, 95, 95);
+        &:hover {
+            background-color: rgb(192, 78, 78); 
+        }
+    }
+
+    .clicker__btn_res {
+        background-color: rgb(236, 208, 45);
+        color: rgb(95, 95, 95);
+        &:hover {
+            background-color: rgb(197, 173, 39);
+        }
+    }
+
+    .clicker__btn_add {
+        background-color: rgb(72, 189, 72);
+        &:hover {
+            background-color: rgb(64, 168, 64);
+        }
+    }
+}
