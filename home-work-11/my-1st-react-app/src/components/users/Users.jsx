@@ -64,7 +64,7 @@ function Users() {
                     <UserCard user={user}/>
                     <hr/>
                 </React.Fragment>
-                )};
+                )}
         </div>
     )
 }
