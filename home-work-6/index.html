@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home Work 6</title>
+</head>
+<body>
+    <style>
+        #menu:not(:defined) {
+            display: none;
+        }
+    </style>
+
+    <tree-menu id="menu">
+        <span slot="title">Царства живых организмов</span>
+        <tree-menu slot="item">
+            <span slot="title">Бактерии</span>
+            <li slot="item">Эндоспоры</li>
+        </tree-menu>
+        <tree-menu slot="item">
+            <span slot="title">Простейшие</span>
+            <li slot="item">Жгутиковые</li>
+            <li slot="item">Корненожки</li>
+            <li slot="item">Споровики</li>
+            <li slot="item">Инфузории</li>
+            <li slot="item">Солнечники</li>
+            <li slot="item">Радиолярии</li>
+        </tree-menu>
+        <tree-menu slot="item">
+            <span slot="title">Грибы</span>
+            <li slot="item">Хитридиомицеты</li>
+            <li slot="item">Зигомицеты</li>
+            <li slot="item">Аскомицеты</li>
+            <li slot="item">Базидиомицеты</li>
+            <li slot="item">Дейтеромицеты</li>
+        </tree-menu>
+        <tree-menu slot="item">
+            <span slot="title">Растения</span>
+            <li slot="item">Водоросли</li>
+            <li slot="item">Мохообразные</li>
+            <li slot="item">Сосудистые споровые</li>
+            <li slot="item">Семенные растения</li>
+        </tree-menu>
+        <tree-menu slot="item">
+            <span slot="title">Животные</span>
+            <li slot="item">Первичноротые</li>
+            <li slot="item">Spiralia</li>
+            <li slot="item">Pan Arthropoda</li>
+            <li slot="item">Вторичноротые</li>
+        </tree-menu>
+    </tree-menu>
+    
+    <template id="templ__tree-menu">
+        <style>
+            slot[name="title"] {
+                cursor: pointer;
+                font-size: 18px;
+            }
+
+            slot[name="title"]:hover {
+                font-weight: bold;
+            }
+            slot[name="item"] {
+                display: none;
+            }
+            slot[name="item"].show {
+                display: initial;
+                font-size: 16px;
+                cursor: pointer;
+            }
+
+        </style>
+
+        <div>
+            <slot name="title"></slot>
+            <ul>
+                <slot name="item"></slot>
+            </ul>
+        </div>
+    </template>
+    
+    <script type="module" src="index.js"></script>
+</body>
+</html>
