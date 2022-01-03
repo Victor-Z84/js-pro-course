@@ -31,9 +31,9 @@ class Header extends React.Component {
     }
 
     componentDidMount() {
-        this.timeoutId= setTimeout(() => {
-            this.setState({showTime: false});
-        }, 15000);
+        // this.timeoutId= setTimeout(() => {
+        //     this.setState({showTime: false});
+        // }, 15000);
     }
 
     componentWillUnmount() {
