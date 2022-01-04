@@ -1,10 +1,11 @@
 import Header from "./header/Header";
 import Menu from "./menu/Menu";
-import Users from "./users/Users";
+// import Users from "./users/Users";
 
-import "./App.scss";
 // import { Clicker } from "./clicker/Clicker";
-import ClickersBlock from "./clickersBlock/clickersBlock";
+// import ClickersBlock from "./clickersBlock/clickersBlock";
+import { UsersPage } from "./usersPage/UsersPage";
+import "./App.scss";
 
 function App() {
 
@@ -22,14 +23,15 @@ function App() {
 
           {isClickers
             ?
-            <ClickersBlock/>
+            <></>
+            // <ClickersBlock/>
             :
             <div>Empty Page</div>
           }
 
           {isUserPage
             ?
-            <Users/>
+            <UsersPage/>
             :
             <div>Empty Page</div>
           }

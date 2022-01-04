@@ -1,6 +1,9 @@
-.users {
+.users-page-modal {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: auto;
+
+    .avatar {
+        height: 300px;
+    }
 }
