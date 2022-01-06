@@ -1,44 +1,39 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { getTime } from "../../helpers/timeHelper";
 
-export class Time extends React.Component {
-    constructor(props) {
-        super(props); //вызываем базовый класс
-        
-        // инициализация state
-        this.state = {
-            now: this.getTime(),
-        };
+import { ReactComponent as TimeIcon } from "../../icons/clock.svg";
 
-        // setInterval(() => {
-        //     console.log('Time');
-        //     // this.state.now = this.getTime(); // так писать нельзя!!! - реакт не следит за этим
-        //     this.setState({ now: this.getTime() });
-        // }, 1000)
-    }
+import "./Time.scss";
 
-    // вызываем метод после монтирования компонента и в него делаем setInterval
-    componentDidMount() {
-        // console.log("componentDidMount");
-        this.intervalId = setInterval(() => {
-            // console.log('Time');
-            this.setState({ now: this.getTime() });
-        }, 1000)
-    }
+const SHOW_TIME = "ShowTime"
 
-    // вызываем метод после размонтирования компонента
-    componentWillUnmount() {
-        // console.log("componentWillUnmount");
-        clearInterval(this.intervalId);
-    }
+export function Time () {
+    const [now, setNow] = useState(getTime());
+    const [show, setShow] = useState(JSON.parse(localStorage.getItem(SHOW_TIME)));
+    
+    // аналогично componentDidMount
+    useEffect(() => {
 
-    getTime = () => new Date().toTimeString().substring(0, 8); // получаем время и отсекаем лишний текст до 8 символов
+        // создаем интервал, монтирование
+        const intervalId = setInterval(() => {
+            setNow(getTime());
+        }, 1000);
 
-    render() {
-        return (
-            <>
-                {/* <span>Now: </span> */}
-                <span>{this.state.now}</span>
-            </>
-        )
-    }
+        // отключаем (чистим) интервал, размонтирование
+        return () => clearInterval(intervalId);
+    }, []);
+
+    // функция переключения состояния показа времени
+    const handleToggleTime = () => {
+        setShow(!show);
+        localStorage.setItem(SHOW_TIME, !show);
+    } 
+
+    return (
+
+        <div className="time-container">
+            {show && <span>{now}</span>}
+            <TimeIcon onClick = {handleToggleTime}/>
+        </div>
+    )
 }
