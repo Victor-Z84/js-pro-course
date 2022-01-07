@@ -3,23 +3,6 @@ import React from "react";
 import { Time } from "../time/Time";
 import "./Header.scss";
 
-// Функциональный компонент:
-// function Header () {
-
-//     return (
-//         <header className="header">
-//             <a href="/home" className="header__link">Home</a>
-//             <a href="/home" className="header__link">Portfolio</a>
-//             <a href="/home" className="header__link">Partners</a>
-//             <a href="/about" className="header__link">About</a>
-
-//             <div className="header__time">
-//                 <Time/>
-//             </div>
-//         </header>
-//     )
-// }
-
 // Классовый компонент:
 class Header extends React.Component {
     constructor(props) {
@@ -39,12 +22,6 @@ class Header extends React.Component {
     componentWillUnmount() {
         clearInterval(this.timeoutId);
     }
-
-    // getTime = () => {
-    //   return this.state.showTime && <Time/>;
-    //      эквивалентно этой записи:
-    //   return this.state.showTime ? <Time/> : null;
-    // }
 
     render() {
         return (

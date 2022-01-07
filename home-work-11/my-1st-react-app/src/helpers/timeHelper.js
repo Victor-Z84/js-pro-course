@@ -1,0 +1,1 @@
+export const getTime = () => new Date().toTimeString().substring(0, 8); // получаем время и отсекаем лишний текст до 8 символов
