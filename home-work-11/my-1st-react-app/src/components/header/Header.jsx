@@ -1,5 +1,6 @@
 
 import React from "react";
+import { withTranslator } from "../../hoc/withTranslator";
 import { Time } from "../time/Time";
 import "./Header.scss";
 
@@ -26,12 +27,21 @@ class Header extends React.Component {
     render() {
         return (
             <header className="header">
-                <a href="/home" className="header__link">Home</a>
-                <a href="/home" className="header__link">Portfolio</a>
-                <a href="/home" className="header__link">Partners</a>
-                <a href="/about" className="header__link">About</a>
+                <a href="/home" className="link">{this.props.translate("header.links.home")}</a>
+                <a href="/home" className="link">{this.props.translate("header.links.portfolio")}</a>
+                <a href="/home" className="link">{this.props.translate("header.links.partners")}</a>
+                <a href="/about" className="link">{this.props.translate("header.links.about")}</a>
+
+                <div className="language">
+                    <button onClick={() => this.props.setLanguage("ru")}>
+                        RU
+                    </button>
+                    <button onClick={() => this.props.setLanguage("en")}>
+                        EN
+                    </button>
+                </div>
     
-                <div className="header__time">
+                <div className="time">
                     {this.state.showTime && <Time/>}
                 </div>
             </header>
@@ -40,4 +50,4 @@ class Header extends React.Component {
 }
 
 
-export default Header;
+export default withTranslator(Header);
