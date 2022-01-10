@@ -8,7 +8,7 @@
     color: white;
     z-index: 10;
 
-    .header__link {
+    .link {
         cursor: pointer;
 
 
@@ -16,7 +16,12 @@
             color: red;
         }
     }
-    .header__time {
+
+    button {
+        cursor: pointer;
+    }
+    
+    .time {
         position: absolute;
         right: 20px;
         top: 50%;

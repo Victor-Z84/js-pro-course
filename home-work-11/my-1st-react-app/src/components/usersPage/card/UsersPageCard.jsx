@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import { withTranslator } from "../../../hoc/withTranslator";
 import { UsersPageModal } from "../modal/UsersPageModal";
 
 import "./UsersPageCard.scss";
 
-export function UsersPageCard ( {user }) {
+export function Card ({ user }) {
 
     // объявляем новую переменную состояния "showModal" и используем хук useState
     const [showModal, setShowModal] = useState(false);
@@ -21,3 +22,5 @@ export function UsersPageCard ( {user }) {
         </>
     );
 }
+
+export const UsersPageCard = withTranslator(Card);

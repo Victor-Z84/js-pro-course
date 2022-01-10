@@ -1,44 +1,47 @@
+
+import { withTranslator } from "../../hoc/withTranslator";
 import "./Menu.scss"
 
 const links = [
     {
-        text: "Messages",
+        textId: "menu.links.messages",
         url: "/"
     },
     {
-        text: "Friends",
+        textId: "menu.links.friends",
         url: "/"
     },
     {
-        text: "News",
+        textId: "menu.links.news",
         url: "/"
     },
     {
-        text: "Groups",
+        textId: "menu.links.groups",
         url: "/"
     },
     {
-        text: "Video",
+        textId: "menu.links.video",
         url: "/"
     },
     {
-        text: "Photos",
+        textId: "menu.links.photos",
         url: "/"
     },
     {
-        text: "Games",
+        textId: "menu.links.games",
         url: "/"
     },
 
 ]
 
-function Menu () {
+function Menu ({ translate }) {
+
     return (
         <div className="menu">
             <ul>
                 {links.map((link, index) => (
                     <li key={index}>
-                        <a href={link.url}>{link.text}</a>
+                        <a href={link.url}>{translate(link.textId)}</a>
                     </li>
                 ))}
             </ul>
@@ -46,4 +49,4 @@ function Menu () {
     )
 }
 
-export default Menu;
+export default withTranslator(Menu);
