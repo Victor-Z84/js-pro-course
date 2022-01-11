@@ -1,47 +1,35 @@
 
+import { NavLink } from "react-router-dom";
 import { withTranslator } from "../../hoc/withTranslator";
 import "./Menu.scss"
 
 const links = [
+    // {
+    //     textId: "menu.links.clicker",
+    //     url: "/clicker"
+    // },
     {
-        textId: "menu.links.messages",
+        textId: "menu.links.home",
         url: "/"
     },
     {
-        textId: "menu.links.friends",
-        url: "/"
+        textId: "menu.links.users",
+        url: "/users"
     },
     {
-        textId: "menu.links.news",
-        url: "/"
+        textId: "menu.links.clickersBlock",
+        url: "/clickersBlock"
     },
-    {
-        textId: "menu.links.groups",
-        url: "/"
-    },
-    {
-        textId: "menu.links.video",
-        url: "/"
-    },
-    {
-        textId: "menu.links.photos",
-        url: "/"
-    },
-    {
-        textId: "menu.links.games",
-        url: "/"
-    },
-
 ]
 
 function Menu ({ translate }) {
 
     return (
-        <div className="menu">
+        <div className="menu text">
             <ul>
                 {links.map((link, index) => (
                     <li key={index}>
-                        <a href={link.url}>{translate(link.textId)}</a>
+                        <NavLink to={link.url}>{translate(link.textId)}</NavLink>
                     </li>
                 ))}
             </ul>

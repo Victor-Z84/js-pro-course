@@ -1,5 +1,5 @@
 .menu {
-    background-color: #546E7A ;
+    background-color: var(--background-menu) ;
 
     position: fixed;
     top: 0px;
@@ -10,6 +10,7 @@
     align-items: center;
     
     li, a {
+        color: var(--text);
         &:hover {
             color: red;
         }

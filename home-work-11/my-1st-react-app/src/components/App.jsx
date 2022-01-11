@@ -1,44 +1,39 @@
+import { Route, Routes } from "react-router-dom";
+import { useEffect } from "react";
+
 import Header from "./header/Header";
 import Menu from "./menu/Menu";
 // import Users from "./users/Users";
 
-// import { Clicker } from "./clicker/Clicker";
-// import ClickersBlock from "./clickersBlock/clickersBlock";
+import ClickersBlock from "./clickersBlock/clickersBlock";
 import { UsersPage } from "./usersPage/UsersPage";
+import UserPage from "./userPage/UserPage";
+import { withTheme } from "../hoc/withTheme";
+
 import "./App.scss";
 
-function App() {
 
-  const isUserPage = true;
+function App({setThemeFromStore}) {
 
-  const isClickers = true;
-
+  useEffect(() => setThemeFromStore(), []); // подгружаем тему при монтировании элемента
   return (
     <div className="app">
       <Header/>
+
       <div className="app_page">
         <Menu/>
+        
         <main className="app__main">
-          {/* <Clicker/> */}
 
-          {isClickers
-            ?
-            <></>
-            // <ClickersBlock/>
-            :
-            <div>Empty Page</div>
-          }
-
-          {isUserPage
-            ?
-            <UsersPage/>
-            :
-            <div>Empty Page</div>
-          }
+          <Routes>
+            <Route path='/clickersBlock' element={<ClickersBlock/>}/>
+            <Route path='/users' element={<UsersPage/>}/>
+            <Route path='/users/:login' element={<UserPage/>}/>
+          </Routes>
         </main>
       </div>
     </div>
   );
 }
 
-export default App;
+export default withTheme(App);
