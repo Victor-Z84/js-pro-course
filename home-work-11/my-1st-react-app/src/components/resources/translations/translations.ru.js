@@ -1,12 +1,9 @@
 export const ruTranslation = {
-    "menu.links.messages": "Сообщения",
-    "menu.links.friends": "Друзья",
-    "menu.links.news": "Новости",
-    "menu.links.groups": "Группы",
-    "menu.links.video": "Видео",
-    "menu.links.photos": "Фото",
-    "menu.links.games": "Игры",
-
+    // "menu.links.clicker": "Кликер",
+    "menu.links.clickersBlock": "Блок кликеров",
+    "menu.links.home": "Домой",
+    "menu.links.users": "Пользователи",
+   
     "header.links.home": "Домой",
     "header.links.portfolio": "Портфолио",
     "header.links.partners": "Партнеры",

@@ -1,0 +1,22 @@
+
+// Это будет финальный код:
+
+[data-theme="light"] {
+    --background: #FAFAFA;
+    --background-card: #FFFFFF;
+    --background-header: #d0d0d0;
+    --background-menu: #c4dfec;
+    --text: #212121;
+}
+
+[data-theme="dark"] {
+    --background: #212121;
+    --background-card: #424242;
+    --background-header: #263238;
+    --background-menu: #546E7A;
+    --text: #FAFAFA;
+}
+
+[data-theme] {
+    --danger: red;
+} 
